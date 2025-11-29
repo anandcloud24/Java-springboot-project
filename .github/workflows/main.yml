@@ -20,7 +20,10 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
           ############
-      - name: Run SonarScanner CLI
+      - name: Setup SonarScanner
+        uses: sonarsource/sonar-scanner-action@v1
+
+      - name: Run SonarScanner 
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_URL }}
