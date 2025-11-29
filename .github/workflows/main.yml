@@ -20,22 +20,16 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
           ############
-      - name: Setup SonarScanner
-        uses: sonarsource/sonar-scanner-action@v*/setup-node  # latest version from Marketplace
-        with:
-          version: '7.3.0.5189'   # or the latest available
-
-
-      # 3️⃣ Clean & Package + SonarQube Scan
-      - name: Sonar Scan
+      - name: Run SonarScanner CLI
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_HOST_URL: ${{ secrets.SONAR_URL }}
         run: |
           sonar-scanner \
             -Dsonar.projectKey=myproject \
-            -Dsonar.sources=. \
-            -Dsonar.host.url=${{ secrets.SONAR_URL }} \
-            -Dsonar.login=${{ secrets.SONAR_TOKEN }}
+            -Dsonar.login=$SONAR_TOKEN \
+            -Dsonar.host.url=$SONAR_HOST_URL
+
 
 
 
