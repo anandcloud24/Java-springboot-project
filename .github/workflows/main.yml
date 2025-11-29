@@ -64,10 +64,11 @@ jobs:
             PID=$(pgrep -f datastore-0.0.7.jar || true)
             if [ -n "$PID" ]; then
               echo "Stopping current app: $PID"
-              sudo kill -9 $PID
+              sudo kill -9 $PID || echo "Process $PID not found, ignoring"
             else
               echo "No running application"
             fi
+
 
       # 8️⃣ Run New Application
       - name: Run Application on EC2
