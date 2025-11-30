@@ -64,7 +64,7 @@ jobs:
             PID=$(pgrep -f datastore-0.0.7.jar || true)
             if [ -n "$PID" ]; then
                 echo "Stopping existing application with PID: $PID"
-                sudo kill -9 $PID || true
+                sudo kill -9 $PID >/dev/null 2>&1 || true
             else
                 echo "No existing application running"
             fi
