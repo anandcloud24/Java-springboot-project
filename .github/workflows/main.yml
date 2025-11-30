@@ -89,7 +89,7 @@ jobs:
             cd /home/ec2-user/app
 
             nohup java -jar datastore-0.0.7.jar \
-              --MYSQL_HOST="jdbc:mysql://database-1.cstu40q04izz.us-east-1.rds.amazonaws.com:3306/datastore?createDatabaseIfNotExist=true" \
+              --MYSQL_HOST="jdbc:mysql://database-1.c7y2sigiw2m6.us-east-1.rds.amazonaws.com:3306/datastore?createDatabaseIfNotExist=true" \
               --MYSQL_USERNAME="admin" \
               --MYSQL_PASSWORD="Cloud123" \
               --LOG_FILE_PATH="/var/log/app/datastore.log" \
