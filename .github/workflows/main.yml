@@ -59,7 +59,7 @@ jobs:
         with:
           host: ${{ secrets.EC2_HOST }}
           username: ec2-user
-          key: ${{ secrets.EC2_SSH_KEY }}
+          key: ${{ secrets.EC2_KEY }}     # REQUIRED
           script: |
             PID=$(pgrep -f datastore-0.0.7.jar || true)
             if [ -n "$PID" ]; then
@@ -69,10 +69,7 @@ jobs:
                 echo "No existing application running"
             fi
             exit 0
-      
-      
-      
-      
+
       
 
 
