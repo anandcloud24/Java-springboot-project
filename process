@@ -9,7 +9,7 @@ nohup java -jar ./datastore-0.0.7.jar > /var/log/app/nohup.out 2>&1 &
 
 
 ####edit the sudo file 
-sudo visudo
+vi /etc/sudoers
 ## add jenkins into sudo file 
 jenkins ALL=(ALL) NOPASSWD: ALL
 
